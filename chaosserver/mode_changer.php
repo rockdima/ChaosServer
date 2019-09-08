@@ -1,5 +1,10 @@
 <?php
 
+/**
+* Server mode changer
+*
+*/
+
 require_once 'server.php';
 
 class ModeChanger extends Server {
@@ -8,10 +13,17 @@ class ModeChanger extends Server {
 		parent::__construct();
 	}
 
+	/**
+	* Get current mode
+	* @return string 
+	*/
 	public function getMode(): string {
 		return $this->_mode['current'];
 	}
 
+	/**
+	* Sets a new mode
+	*/
 	public function newMode(string $newMode) {
 		$this->setMode($newMode);
 	}
@@ -19,6 +31,7 @@ class ModeChanger extends Server {
 
 $mode_changer = new ModeChanger;
 
+//if post request, change to a new mode
 if(isset($_POST['new_mode']) && $_POST['new_mode'] != '') {
 	$mode_changer->newMode($_POST['new_mode']);
 }
