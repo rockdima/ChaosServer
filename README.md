@@ -11,7 +11,7 @@ There are 3 modes "normal", "degraded" and "failure".
 
 Modes configuration placed in config.json file.
 
-Current mode placed in cerrunt_mode.json file.
+Current mode placed in current_mode.json file.
 
 ## Test a Server
 
